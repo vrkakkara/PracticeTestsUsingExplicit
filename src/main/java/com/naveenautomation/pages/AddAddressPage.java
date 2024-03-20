@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import com.naveenautomation.TestBase.TestBase;
+import com.naveenautomation.Utility.Utility;
 
 public class AddAddressPage extends TestBase{
 	
@@ -50,44 +51,44 @@ public class AddAddressPage extends TestBase{
 	WebElement addressBookContinue;
 	
 	private void enterFirstNAme(String fname) {
-		firstName.clear();
-		firstName.sendKeys(fname);;
-			}
+		Utility.clearField(firstName);
+		Utility.enterText(firstName, fname);
+					}
 	private void enterLastNAme(String lname) {
-		lastName.clear();
-		lastName.sendKeys(lname);;
+		Utility.clearField(lastName);
+		Utility.enterText(lastName, lname);
 			}
 	private void enterAddress(String address1) {
-		this.address1.clear();
-		this.address1.sendKeys(address1);;
+		Utility.clearField(this.address1);
+		Utility.enterText(this.address1, address1);
 			}
 	private void enterCity(String cityName) {
-		city.clear();
-		city.sendKeys(cityName);;
+		Utility.clearField(city);
+		Utility.enterText(city, cityName);
 			}
 	
 	private void enterPostCode(String post) {
-		postCode.clear();
-		postCode.sendKeys(post);
+		Utility.clearField(postCode);
+		Utility.enterText(postCode, post);
 			}
 	
 	private void selectCountry() {
-		Select select=new Select(selectCountry);
-		select.selectByVisibleText("Canada");
+		Utility.selectDropdownByVisibleText(selectCountry, "Canada");
 	}
 
 	private void selectZone() {
 		Select select2=new Select(selectZone);
+		Utility.sleep(3);
 		select2.selectByVisibleText("Ontario");
 	}
 	
 	private void clickDefaultAddress() {
-		defaultAddressCheckBox.click();
+		Utility.clickElement(defaultAddressCheckBox);
 		
 			}
 	
 	private void clickContinue() {
-	addressBookContinue.click();
+		Utility.clickElement(addressBookContinue);
 		
 			}
 	

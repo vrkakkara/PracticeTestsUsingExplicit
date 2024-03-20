@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import com.naveenautomation.TestBase.TestBase;
+import com.naveenautomation.Utility.Utility;
 
 public class AddressBookPage extends TestBase{
 	
@@ -23,7 +24,7 @@ public class AddressBookPage extends TestBase{
 	
 
 	public AddAddressPage clickNewAddressBtn() {
-		newAddressBtn.click();
+		Utility.clickElement(newAddressBtn);
 		return new AddAddressPage();
 
 	}

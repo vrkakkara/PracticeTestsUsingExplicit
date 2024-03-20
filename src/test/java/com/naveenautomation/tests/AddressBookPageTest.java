@@ -8,8 +8,6 @@ import com.naveenautomation.pages.AccountLoginPage;
 import com.naveenautomation.pages.AddAddressPage;
 import com.naveenautomation.pages.AddressBookPage;
 import com.naveenautomation.pages.MyAccountPage;
-import com.naveenautomation.pages.NewsLetterPage;
-import com.naveenautomation.pages.PasswordChangePage;
 
 public class AddressBookPageTest extends TestBase{
 	

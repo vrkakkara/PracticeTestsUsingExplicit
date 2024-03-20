@@ -5,6 +5,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.naveenautomation.TestBase.TestBase;
+import com.naveenautomation.Utility.Utility;
 
 public class CustomListener extends TestBase implements ITestListener{
 	public void onTestStart(ITestResult result){
@@ -20,9 +21,10 @@ public class CustomListener extends TestBase implements ITestListener{
 
 	 
 	  public void onTestFailure(ITestResult result){
+		  if(result != null) {
 		  logger.info("Test Failed and Taking Screenshot : " + result.getMethod().getMethodName());
-			//Utility.takeFailedTestScreenShot(result.getMethod().getMethodName());
-		  
+			Utility.takeFailedTestScreenShot(result.getMethod().getMethodName());
+		  }
 	  }
 
 	

@@ -26,7 +26,11 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-
+   <dependency>
+        <groupId>com.aventstack</groupId>
+        <artifactId>extentreports</artifactId>
+        <version>3.1.2</version>
+    </dependency>
 <dependency>
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
@@ -64,8 +68,14 @@
     <artifactId>webdrivermanager</artifactId>
     <version>5.5.0</version>
 </dependency>
-
-
+<dependency>
+<groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.9.8</version>
+      <scope>test</scope>	
+	
+	
+</dependency>
 <dependency>
     <groupId>commons-lang</groupId>
     <artifactId>commons-lang</artifactId>

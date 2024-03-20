@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import com.naveenautomation.TestBase.TestBase;
+import com.naveenautomation.Utility.Utility;
 	
 public class MyAccountPage extends TestBase {
 	
@@ -106,8 +107,32 @@ public class MyAccountPage extends TestBase {
 	WebElement transactionsBtn;
 	
 	
+	//Add to Wishlist
+		@FindBy(css = "button[type='button'][onclick*='42'][data-original-title='Add to Wish List']")
+
+		WebElement addToWishlistBtn;
+		
+		
+		
+		@FindBy(css = "a#wishlist-total span.hidden-xs.hidden-sm.hidden-md")
+
+		WebElement WishlistBtnOnTop;
 	
 	
+		
+		@FindBy(css = "div.alert.alert-success.alert-dismissible")
+
+		WebElement WishlistConfirmationText;
+		
+		
+		//Order History
+				@FindBy(css = "a.list-group-item:nth-of-type(6)")
+
+				WebElement orderHistoryBtn;
+				
+				
+				
+		
 	
 	
 	
@@ -121,82 +146,81 @@ public class MyAccountPage extends TestBase {
 
 	//contactUs
 	public ContactUsPage clickContactUsBtn() {
-		contactUsBtn.click();
+		Utility.clickElement(contactUsBtn);
 		return new ContactUsPage();
 	}
 
-	public GiftCertificatePage clickGiftCertificateBtn() {
-		giftCertificateBtn.click();
-		return new GiftCertificatePage();
-	}
-	
+	/*
+	 * public GiftCertificatePage clickGiftCertificateBtn() {
+	 * giftCertificateBtn.click(); return new GiftCertificatePage(); }
+	 */
 	
 	
 	//order placing
 	private void clickDesktopIcon() {
-		DesktopIcon.click();
+		Utility.clickElement(DesktopIcon);
 	}
 	
 	private void clickShowAllDesktopIcon() {
-		showAllDesktopIcon.click();
+		Utility.clickElement(showAllDesktopIcon);
 	}
 	private void clickAddToCartBtn() {
-		addToCartBtn.click();
+		Utility.clickElement(addToCartBtn);
 	}
 	private void clickCartBtn() {
-		cartBtn.click();
+		Utility.clickElement(cartBtn);
 	}
 	private void clickViewCartBtn() {
-		viewCartBtn.click();
+		Utility.clickElement(viewCartBtn);
 	}
 	
-	public ShoppingCartPage addToCartFlow() {
-		clickDesktopIcon();
-		clickShowAllDesktopIcon();
-		clickAddToCartBtn();
-		clickCartBtn();
-		clickViewCartBtn();
-		return new ShoppingCartPage();
-	}
+	/*
+	 * public ShoppingCartPage addToCartFlow() { clickDesktopIcon();
+	 * clickShowAllDesktopIcon(); clickAddToCartBtn(); clickCartBtn();
+	 * clickViewCartBtn(); return new ShoppingCartPage(); }
+	 */
 	
 	
 	
-	//Newsletter
-	public NewsLetterPage clicknewsLetterBtn() {
-		newsLetterBtn.click();
-		return new NewsLetterPage();
-	}
+	/*
+	 * //Newsletter public NewsLetterPage clicknewsLetterBtn() {
+	 * newsLetterBtn.click(); return new NewsLetterPage(); }
+	 */
 	
-	public void validateNewsLetterMessage() {
-		String newsletterSuccessText=newsLetterSuccessBanner.getText();
-		Assert.assertEquals(newsletterSuccessText,
-				"Success: Your newsletter subscription has been successfully updated!");
-	}
+	
+	
+	
+	
+	/*
+	 * public void validateNewsLetterMessage() { String
+	 * newsletterSuccessText=newsLetterSuccessBanner.getText();
+	 * Assert.assertEquals(newsletterSuccessText,
+	 * "Success: Your newsletter subscription has been successfully updated!"); }
+	 */
 	
 	//Downlaods
 	
 	public DownloadsPage clickDownloadsBtn() {
-		downloadsBtn.click();
+		Utility.clickElement(downloadsBtn);
 		return new DownloadsPage();
 	}
 	
 	//Reward points
 	
-	public RewardPointsPage clickRewardPointsBtn() {
-		rewardpointsBtn.click();
-		return new RewardPointsPage();
-	}
-	
+	/*
+	 * public RewardPointsPage clickRewardPointsBtn() { rewardpointsBtn.click();
+	 * return new RewardPointsPage(); }
+	 */
 	
 	//Change Password
 	
-		public PasswordChangePage clickPaswordChangeBtn() {
-			passwordChangeBtn.click();
-			return new PasswordChangePage();
-		}
+	/*
+	 * public PasswordChangePage clickPaswordChangeBtn() {
+	 * passwordChangeBtn.click(); return new PasswordChangePage(); }
+	 */
 		
 		public void validatePasswordChangeMessage() {
-			String passwordChangeText=passwordChangeBanner.getText();
+			String passwordChangeText=Utility.getTextOfElement(passwordChangeBanner);
 			Assert.assertEquals(passwordChangeText,
 					"Success: Your password has been successfully updated.");
 		}
@@ -204,35 +228,60 @@ public class MyAccountPage extends TestBase {
 	
 		//Return request
 		
-		public ReturnRequestPage clickReturnRequest() {
-			returnRequestBtn.click();
-			return new ReturnRequestPage();
-		}
-		
+		/*
+		 * public ReturnRequestPage clickReturnRequest() { returnRequestBtn.click();
+		 * return new ReturnRequestPage(); }
+		 */
 		
 		//Address chnage
 		
 		public AddressBookPage clickAddressChnageBtn() {
-			addressChangeBtn.click();
+			Utility.clickElement(addressChangeBtn);
 			return new AddressBookPage();
 		}
 		
 	//Wishlist
 		
-		public WishlistPage clickWishlistBtn() {
-			wishlistBtn.click();
-			return new WishlistPage();
-		}
-	
+	/*
+	 * public WishlistPage clickWishlistBtn() { wishlistBtn.click(); return new
+	 * WishlistPage(); }
+	 */
 		
 		//Transactions
 		
-				public TransactionsPage clickTransactionsBtn() {
-					transactionsBtn.click();
-					return new TransactionsPage();
-				}
+		/*
+		 * public TransactionsPage clickTransactionsBtn() { transactionsBtn.click();
+		 * return new TransactionsPage(); }
+		 */
 	
+				
+//Add to Wishlist
+				
+				/*
+				 * private void clickDesktopIcon() { DesktopIcon.click(); }
+				 * 
+				 * private void clickShowAllDesktopIcon() { showAllDesktopIcon.click(); }
+				 */
 	
-	
-	
+				/*
+				 * private void clickAddWishlistBtn() { addToWishlistBtn.click(); }
+				 * 
+				 * private void clickWishlistIcon() { WishlistBtnOnTop.click(); } private void
+				 * validateWishlistBanner() { String
+				 * wishListBAnner=WishlistConfirmationText.getText(); String []
+				 * splitSentence=new String[2]; splitSentence=wishListBAnner.split("added");
+				 * String wishlistBanner2=splitSentence[2]; String [] itemInWishlist=new
+				 * String[2]; itemInWishlist=wishlistBanner2.split("to");
+				 * System.out.println("The item added in the wishlist is: "+itemInWishlist[0]);
+				 * //Assert.assertEquals(itemInWishlist[0],"Apple Cinema 30" "); } public void
+				 * addToWishlistFlow() { clickDesktopIcon(); clickShowAllDesktopIcon();
+				 * clickAddWishlistBtn(); clickWishlistIcon(); validateWishlistBanner(); }
+				 */
+				
+				
+				
+				/*
+				 * public OrderHistoryPage clickOrderHistoryBtn() { orderHistoryBtn.click();
+				 * return new OrderHistoryPage(); }
+				 */
 }

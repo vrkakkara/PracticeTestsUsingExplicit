@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import com.naveenautomation.TestBase.TestBase;
+import com.naveenautomation.Utility.Utility;
 
 public class DownloadsPage extends TestBase{
 	
@@ -23,13 +24,13 @@ public class DownloadsPage extends TestBase{
 	
 	
 	public void validateDownloadsConfirmation() {
-		String downloadsText=noDownloadsConfirmation.getText();
+		String downloadsText=Utility.getTextOfElement(noDownloadsConfirmation);
 		Assert.assertEquals(downloadsText,
 				"You have not made any previous downloadable orders!");
 	}
 	
 	private void clickDownloadsContinueBtn() {
-		downloadsContinueBtn.click();
+		Utility.clickElement(downloadsContinueBtn);
 	}
 	
 	public MyAccountPage downloadsFlow() {

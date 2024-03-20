@@ -26,7 +26,7 @@ public class TestBase {
 	public void pageInitialisation() {
 		setBrowserForTesting();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		logger.info("Loading the page");
 		driver.get("https://naveenautomationlabs.com/opencart/index.php?route=common/home");
 

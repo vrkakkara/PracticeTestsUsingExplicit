@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import com.naveenautomation.TestBase.TestBase;
+import com.naveenautomation.Utility.Utility;
 
 public class ContactUsPage extends TestBase {
 
@@ -43,37 +44,34 @@ public class ContactUsPage extends TestBase {
 	WebElement continueBtn;
 
 	private void enterName(String name) {
-		
-		yourName.clear();
-		yourName.sendKeys(name);
+		Utility.enterText(yourName, name);
+			//yourName.sendKeys(name);
 		
 
 	}
 private void enterEmail(String email) {
 		
-		
-		emailAddress.clear();
-		emailAddress.sendKeys(email);
+	Utility.clearField(emailAddress);
+	Utility.enterText(emailAddress, email);
 
 	}
 
 	
 	
 	private void enterEnquiry(String enquiryText) {
-
-		enquiry.sendKeys(enquiryText);
+		Utility.enterText(enquiry, enquiryText);
 
 	}
 
 	private void clickContactSubmit() {
+		Utility.submitClickElement(contactSubmitBtn);
 
-		contactSubmitBtn.submit();
 
 	}
 	
 	private void validateContactUs() {
 
-		String contactUsConfirmationText = contactUsConfirmation.getText();
+		String contactUsConfirmationText = Utility.getTextOfElement(contactUsConfirmation);
 		System.out.println(contactUsConfirmationText);
 
 		Assert.assertEquals(contactUsConfirmationText, "Your enquiry has been successfully sent to the store owner!");
@@ -81,8 +79,7 @@ private void enterEmail(String email) {
 	}
 	
 	private void clickContinueBtn() {
-
-		continueBtn.click();
+    Utility.clickElement(continueBtn);
 
 	}
 
