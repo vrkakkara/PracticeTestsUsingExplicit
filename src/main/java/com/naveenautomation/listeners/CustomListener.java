@@ -21,10 +21,10 @@ public class CustomListener extends TestBase implements ITestListener{
 
 	 
 	  public void onTestFailure(ITestResult result){
-		  if(result != null) {
+		 
 		  logger.info("Test Failed and Taking Screenshot : " + result.getMethod().getMethodName());
 			Utility.takeFailedTestScreenShot(result.getMethod().getMethodName());
-		  }
+		  
 	  }
 
 	

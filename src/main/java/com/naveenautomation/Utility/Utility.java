@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -37,7 +38,16 @@ public class Utility extends TestBase {
 
 	}
 
-
+	public static String generateRandomName() {
+		return RandomStringUtils.randomAlphabetic(5);
+	}
+	
+	public static String generateRandomemail() {
+		return ("abc"+RandomStringUtils.randomAlphabetic(3)+"@gmail.com");
+	}
+	public static String generateRandomPhoneNumber() {
+		return RandomStringUtils.randomNumeric(10);
+	}
 
 	public static Date generateRandomDate() {
 		return new Date();

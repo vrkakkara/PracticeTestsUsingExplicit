@@ -26,7 +26,7 @@ public class DownloadsPage extends TestBase{
 	public void validateDownloadsConfirmation() {
 		String downloadsText=Utility.getTextOfElement(noDownloadsConfirmation);
 		Assert.assertEquals(downloadsText,
-				"You have not made any previous downloadable orders!");
+				"You have not made any previous downloadableeeeee orders!");
 	}
 	
 	private void clickDownloadsContinueBtn() {
